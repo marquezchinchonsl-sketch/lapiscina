@@ -1,0 +1,232 @@
+/* ── Reset ─────────────────────────────── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #faf9f7;
+  color: #1a1816;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2 { font-family: 'Playfair Display', serif; }
+
+/* ── Hero ──────────────────────────────── */
+.hero {
+  background: #0d0d0d;
+  padding: 72px 48px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-inner {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  padding-bottom: 64px;
+}
+
+.hero-loc {
+  font-size: 0.6rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 400;
+  color: #faf9f7;
+  line-height: 1.0;
+  letter-spacing: -0.01em;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: #c4703a;
+  font-weight: 400;
+}
+
+.hero-wave {
+  line-height: 0;
+  margin-top: -2px;
+}
+
+.hero-wave svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Menu ─────────────────────────────── */
+.menu {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 64px 40px 80px;
+}
+
+/* ── Cat ─────────────────────────────── */
+.cat {
+  margin-bottom: 72px;
+}
+
+.cat-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 28px;
+  padding-bottom: 20px;
+  border-bottom: 1.5px solid #1a1816;
+}
+
+.cat-head-text h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #1a1816;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.cat-head-text p {
+  font-size: 0.72rem;
+  color: #c4703a;
+  letter-spacing: 0.06em;
+}
+
+/* ── Items ─────────────────────────────── */
+.items {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 24px;
+  padding: 13px 0;
+  border-bottom: 1px solid rgba(26,24,22,0.08);
+  transition: background 0.15s;
+}
+
+.item:last-child { border-bottom: none; }
+
+.item:hover {
+  background: rgba(196,112,58,0.04);
+  margin: 0 -12px;
+  padding: 13px 12px;
+  border-radius: 4px;
+}
+
+.item-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+
+.item-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1a1816;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.item-desc {
+  font-size: 0.75rem;
+  color: #9c9088;
+  line-height: 1.4;
+}
+
+.item-price {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 400;
+  color: #1a1816;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Star / highlight item */
+.item--star .item-name {
+  color: #c4703a;
+}
+.item--star .item-price {
+  color: #c4703a;
+  font-weight: 700;
+}
+
+.item--star:hover {
+  background: rgba(196,112,58,0.06);
+}
+
+/* Small / addon item */
+.item--small .item-name {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 400;
+  color: #b0a898;
+}
+.item--small .item-price {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.82rem;
+  color: #b0a898;
+}
+.item--small:hover { transform: none; background: none; margin: 0; padding: 13px 0; }
+
+/* Badge */
+.badge {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  color: #c4703a;
+  border: 1px solid rgba(196,112,58,0.4);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  vertical-align: middle;
+}
+
+/* ── Allergen ─────────────────────────── */
+.allergen {
+  margin-top: 16px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(26,24,22,0.1);
+  font-size: 0.72rem;
+  color: #b0a898;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* ── Footer ───────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 0.65rem;
+  color: #c0b8b0;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ── Responsive ─────────────────────── */
+@media (max-width: 540px) {
+  .hero { padding: 56px 28px 0; }
+  .hero-title { font-size: 3rem; }
+  .menu { padding: 48px 24px 60px; }
+  .cat-num { font-size: 2.2rem; }
+  .cat-head { gap: 14px; }
+  .item-name { font-size: 0.98rem; }
+  .item-price { font-size: 0.98rem; }
+  .item:hover { margin: 0 -8px; padding: 13px 8px; }
+}

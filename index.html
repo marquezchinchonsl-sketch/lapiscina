@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiosco La Piscina</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ── HERO ─────────────────────────── -->
+  <section class="hero">
+    <div class="hero-inner">
+      <p class="hero-loc"></p>
+      <h1 class="hero-title">Kiosco<br><em>La Piscina</em></h1>
+    </div>
+    <div class="hero-wave">
+      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 60 C360 120 720 0 1080 60 C1260 90 1380 80 1440 60 L1440 120 L0 120 Z" fill="#0d0d0d"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ── MENU ───────────────────────────── -->
+  <main class="menu">
+
+    <!-- Hamburguesas -->
+    <section class="cat" id="hamburguesas">
+      <div class="cat-head">
+        <div class="cat-head-text">
+          <h2>Hamburguesas</h2>
+          <p>Queso · Lechuga · Cebolla · Tomate</p>
+        </div>
+      </div>
+      <div class="items">
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Mixta</span>
+            <span class="item-desc">Ternera y Cerdo · Queso, Lechuga, Cebolla, Tomate</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Pollo</span>
+            <span class="item-desc">Pecho de pollo a la plancha · Queso, Lechuga, Cebolla, Tomate</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Pollo Crispy 100gr</span>
+            <span class="item-desc">Empanada estilo americano, crujiente · Queso, Lechuga, Cebolla, Tomate</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Pollo Crispy 200g</span>
+            <span class="item-desc">Doble ración · Queso, Lechuga, Cebolla, Tomate</span>
+          </div>
+          <span class="item-price">8,50 €</span>
+        </div>
+
+        <div class="item item--star">
+          <div class="item-left">
+            <span class="item-name">Hamburguesa Piscina <span class="badge">★ Popular</span></span>
+            <span class="item-desc">Ternera-Cerdo o Pollo · Queso, Lechuga, Cebolla, Tomate, Huevo y Beicon</span>
+          </div>
+          <span class="item-price">7,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Perrito Caliente</span>
+            <span class="item-desc">Consultar al personal</span>
+          </div>
+          <span class="item-price">—</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Sándwiches -->
+    <section class="cat" id="sandwiches">
+      <div class="cat-head">
+        <div class="cat-head-text">
+          <h2>Sándwiches</h2>
+          <p>Pan recién tostado</p>
+        </div>
+      </div>
+      <div class="items">
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Mixto</span>
+            <span class="item-desc">Jamón y Queso</span>
+          </div>
+          <span class="item-price">4,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Mixto con Huevo</span>
+            <span class="item-desc">Añade huevo frito</span>
+          </div>
+          <span class="item-price">5,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Vegetal</span>
+            <span class="item-desc">Lechuga, Tomate, Zanahoria y Maíz</span>
+          </div>
+          <span class="item-price">4,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Vegetal con Pollo</span>
+            <span class="item-desc">Verduras variadas y pollo a la plancha</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Vegetal con Huevo</span>
+            <span class="item-desc">Verduras variadas y huevo frito</span>
+          </div>
+          <span class="item-price">5,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Pizzelas</span>
+            <span class="item-desc">Consultar al personal</span>
+          </div>
+          <span class="item-price">5,00 €</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bocadillos -->
+    <section class="cat" id="bocadillos">
+      <div class="cat-head">
+        <div class="cat-head-text">
+          <h2>Bocadillos</h2>
+          <p>Pan de telera, recién hecho</p>
+        </div>
+      </div>
+      <div class="items">
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Bocadillo de Chorizo</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Bocadillo de Morcilla</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Bocadillo de Lomo</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Bocadillo de Panceta</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Bocadillo de Beicon</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Bocadillo de Pollo</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item item--small">
+          <div class="item-left">
+            <span class="item-name">Suplemento Queso o Tomate</span>
+          </div>
+          <span class="item-price">+1,00 €</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Montados -->
+    <section class="cat" id="montados">
+      <div class="cat-head">
+        <div class="cat-head-text">
+          <h2>Montados</h2>
+          <p>Tortilla suave de trigo</p>
+        </div>
+      </div>
+      <div class="items">
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Montado de Chorizo</span>
+          </div>
+          <span class="item-price">4,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Montado de Morcilla</span>
+          </div>
+          <span class="item-price">4,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Montado de Lomo</span>
+          </div>
+          <span class="item-price">4,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Montado de Panceta</span>
+          </div>
+          <span class="item-price">4,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Montado de Beicon</span>
+          </div>
+          <span class="item-price">4,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Montado de Pollo</span>
+          </div>
+          <span class="item-price">4,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Pepito de Ternera</span>
+          </div>
+          <span class="item-price">8,00 €</span>
+        </div>
+
+        <div class="item item--small">
+          <div class="item-left">
+            <span class="item-name">Suplemento Queso o Tomate</span>
+          </div>
+          <span class="item-price">+0,50 €</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Raciones -->
+    <section class="cat" id="raciones">
+      <div class="cat-head">
+        <div class="cat-head-text">
+          <h2>Raciones</h2>
+          <p>Para compartir</p>
+        </div>
+      </div>
+      <div class="items">
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Pincho Moruno</span>
+            <span class="item-desc">Unidad · Cerdo adobado a la brasa</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Pincho Moruno Pollo</span>
+            <span class="item-desc">Unidad · Pollo adobado a la brasa</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Vaso Grande de Patatas</span>
+          </div>
+          <span class="item-price">6,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Salchipapas</span>
+            <span class="item-desc">Patatas fritas con salchicha</span>
+          </div>
+          <span class="item-price">7,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Tortilla Entera</span>
+          </div>
+          <span class="item-price">10,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Nuggets de Pollo</span>
+            <span class="item-desc">12 unidades</span>
+          </div>
+          <span class="item-price">8,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Croquetas</span>
+            <span class="item-desc">Pollo o Jamón · 10 unidades</span>
+          </div>
+          <span class="item-price">8,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Alitas</span>
+            <span class="item-desc">Estilo Buffalo</span>
+          </div>
+          <span class="item-price">9,00 €</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Ensaladas -->
+    <section class="cat" id="ensaladas">
+      <div class="cat-head">
+        <div class="cat-head-text">
+          <h2>Ensaladas</h2>
+          <p>Frescas y elaboradas al momento</p>
+        </div>
+      </div>
+      <div class="items">
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Ensalada Mixta</span>
+            <span class="item-desc">Lechuga, Tomate, Cebolla y Atún</span>
+          </div>
+          <span class="item-price">7,00 €</span>
+        </div>
+
+        <div class="item item--star">
+          <div class="item-left">
+            <span class="item-name">Ensalada Piscina <span class="badge">★ Nuestra especial</span></span>
+            <span class="item-desc">Lechuga, Tomate, Cebolla, Atún, Espárragos, Huevo Cocido, Zanahoria Rayada y Aceitunas</span>
+          </div>
+          <span class="item-price">9,00 €</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Combinados -->
+    <section class="cat" id="combinados">
+      <div class="cat-head">
+        <div class="cat-head-text">
+          <h2>Platos Combinados</h2>
+          <p>Huevos + Guarnición</p>
+        </div>
+      </div>
+      <div class="items">
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Combinado Nº 1</span>
+            <span class="item-desc">Lomo, Huevo y Patatas</span>
+          </div>
+          <span class="item-price">8,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Combinado Nº 2</span>
+            <span class="item-desc">Beicon, Huevo y Patatas</span>
+          </div>
+          <span class="item-price">8,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Combinado Nº 3</span>
+            <span class="item-desc">Salchichas Frankfurt, Huevo y Patatas</span>
+          </div>
+          <span class="item-price">7,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Combinado Nº 4</span>
+            <span class="item-desc">Ternera, Huevo y Patatas</span>
+          </div>
+          <span class="item-price">9,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Combinado Nº 5</span>
+            <span class="item-desc">Pechuga de Pollo, Huevo y Patatas</span>
+          </div>
+          <span class="item-price">8,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Combinado Nº 6</span>
+            <span class="item-desc">1 Pincho Moruno, Huevo y Patatas</span>
+          </div>
+          <span class="item-price">7,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Combinado Nº 7</span>
+            <span class="item-desc">1 Chuleta Sajonia, Huevo y Patatas</span>
+          </div>
+          <span class="item-price">8,00 €</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bebidas -->
+    <section class="cat" id="bebidas">
+      <div class="cat-head">
+        <div class="cat-head-text">
+          <h2>Bebidas</h2>
+        </div>
+      </div>
+      <div class="items">
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Caña de Cerveza</span>
+          </div>
+          <span class="item-price">2,30 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Cerveza grande</span>
+          </div>
+          <span class="item-price">3,30 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Litro de Cerveza</span>
+          </div>
+          <span class="item-price">5,30 €</span>
+        </div>
+
+        <div class="item item--star">
+          <div class="item-left">
+            <span class="item-name">Refrescos <span class="badge">Lata</span></span>
+            <span class="item-desc">Coca-Cola, Fanta, Nestea, etc.</span>
+          </div>
+          <span class="item-price">2,30 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Zumos</span>
+            <span class="item-desc">Naranja, Piña, Melocotón</span>
+          </div>
+          <span class="item-price">1,60 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Red Bull</span>
+          </div>
+          <span class="item-price">3,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Agua pequeña</span>
+          </div>
+          <span class="item-price">1,20 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Agua grande</span>
+          </div>
+          <span class="item-price">2,20 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Tinto de Verano pequeño</span>
+          </div>
+          <span class="item-price">2,30 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Tinto de Verano grande</span>
+          </div>
+          <span class="item-price">3,30 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Tinto de Verano 1l.</span>
+          </div>
+          <span class="item-price">5,30 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Granizados</span>
+            <span class="item-desc">Consultar al personal</span>
+          </div>
+          <span class="item-price">2,50 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Cubatas</span>
+          </div>
+          <span class="item-price">7,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Litro de Cubata</span>
+          </div>
+          <span class="item-price">14,00 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Café</span>
+          </div>
+          <span class="item-price">1,60 €</span>
+        </div>
+
+        <div class="item">
+          <div class="item-left">
+            <span class="item-name">Licores</span>
+          </div>
+          <span class="item-price">4,00 €</span>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Allergen -->
+    <div class="allergen">
+      <p>⚠️ Nuestros productos pueden contener trazas de alérgenos. Consulta al personal.</p>
+    </div>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Kiosco La Piscina · 2026</p>
+  </footer>
+
+</body>
+</html>
