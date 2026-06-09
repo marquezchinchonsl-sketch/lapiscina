@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiosco La Piscina — QR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0d0d0d;
+      color: #faf9f7;
+      font-family: 'DM Sans', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      width: 100%;
+    }
+    .qr-box {
+      background: #faf9f7;
+      border-radius: 20px;
+      padding: 32px;
+      margin-bottom: 28px;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+    }
+    .qr-box img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #faf9f7;
+      margin-bottom: 4px;
+    }
+    .title em {
+      font-style: italic;
+      color: #c4703a;
+    }
+    .url {
+      font-size: 0.78rem;
+      color: rgba(250,249,247,0.4);
+      margin-bottom: 24px;
+      word-break: break-all;
+    }
+    .scan-hint {
+      font-size: 0.75rem;
+      color: rgba(250,249,247,0.5);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .brand {
+      margin-top: 32px;
+      font-size: 0.65rem;
+      color: rgba(250,249,247,0.2);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="qr-box">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=400x400&margin=12&format=png&color=1a1816&bgcolor=faf9f7&data=https://lapiscina.gastroexperiencem.es/" alt="QR Code Kiosco La Piscina">
+    </div>
+    <h1 class="title">Kiosco <em>La Piscina</em></h1>
+    <p class="url">lapiscina.gastroexperiencem.es</p>
+    <p class="scan-hint">Escanea para ver la carta</p>
+    <p class="brand">Kiosco La Piscina · 2026</p>
+  </div>
+</body>
+</html>
