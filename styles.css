@@ -77,13 +77,28 @@ h1, h2 { font-family: 'Playfair Display', serif; }
   background: rgba(91,168,160,0.12);
   padding: 14px 24px;
   border-radius: 8px;
-  display: inline-block;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0 6px;
   border: 1px solid rgba(91,168,160,0.25);
 }
 
 .hero-info span {
   color: #5BA8A0;
   font-weight: 500;
+}
+
+.hero-phone {
+  color: #5BA8A0;
+  font-weight: 500;
+}
+
+.hero-row {
+  color: rgba(255,255,255,0.65);
+  font-weight: 400;
 }
 
 /* ── Menu ─────────────────────────────── */
@@ -247,6 +262,15 @@ h1, h2 { font-family: 'Playfair Display', serif; }
 @media (max-width: 540px) {
   .hero { padding: 56px 28px 0; }
   .hero-title { font-size: 3rem; }
+  .hero-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+    padding: 14px 20px;
+  }
+  .hero-info .hero-sep { display: none; }
   .menu { padding: 48px 24px 60px; }
   .cat-num { font-size: 2.2rem; }
   .cat-head { gap: 14px; }

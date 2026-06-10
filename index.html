@@ -66,7 +66,12 @@
       background: rgba(91,168,160,0.12);
       padding: 14px 24px;
       border-radius: 8px;
-      display: inline-block;
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0 6px;
       border: 1px solid rgba(91,168,160,0.25);
     }
 
@@ -125,10 +130,32 @@
       font-size: 1.2rem;
     }
 
+    .card--promo {
+      background: rgba(91,168,160,0.06);
+      border-color: rgba(91,168,160,0.25);
+    }
+
+    .card--promo:hover {
+      background: rgba(91,168,160,0.1);
+    }
+
+    .card--promo .card-text h2 {
+      color: #4A8A82;
+    }
+
     /* ── Responsive ─────────────────────── */
     @media (max-width: 540px) {
       .hero { padding: 56px 28px 0; }
       .hero-title { font-size: 3rem; }
+      .hero-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        text-align: center;
+        padding: 14px 20px;
+      }
+      .hero-info .hero-sep { display: none; }
       .cards { padding: 48px 24px 60px; }
     }
   </style>
@@ -140,7 +167,7 @@
     <div class="hero-inner">
       <p class="hero-loc"></p>
       <h1 class="hero-title">Kiosco<br><em>La Piscina</em></h1>
-      <p class="hero-info">Celebramos cumpleaños · Llamanos al <span>645 95 25 06</span> · Aceptamos tarjeta</p>
+      <p class="hero-info"><span class="hero-row">Celebramos cumpleaños</span><span class="hero-sep"> · </span><span class="hero-row">Llamanos al <span class="hero-phone">645 95 25 06</span></span><span class="hero-sep"> · </span><span class="hero-row">Aceptamos tarjeta</span></p>
     </div>
     <div class="hero-wave">
       <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -205,6 +232,7 @@
       <div class="card-text"><h2>Bebidas</h2></div>
       <div class="arrow">→</div>
     </a>
+
   </div>
 
 </body>
