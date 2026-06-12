@@ -8,232 +8,294 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <style>
-    /* ── Cards Grid ─────────────────────── */
-    .hero {
-      background: #0d0d0d;
-      padding: 72px 48px 0;
-      position: relative;
-      overflow: hidden;
-    }
+    /* ── SPA ── */
+    body { background: #faf9f7; }
+    .spa-home { display: none; }
+    .spa-menu { display: none; }
+    body.route-home .spa-home { display: block; }
+    body.route-menu .spa-menu { display: block; }
 
-    .hero-inner {
-      max-width: 600px;
-      margin: 0 auto;
-      text-align: center;
-      padding-bottom: 64px;
-    }
+    /* ── Cards Grid ── */
+    .hero { background: #0d0d0d; padding: 72px 48px 0; position: relative; overflow: hidden; }
+    .hero-inner { max-width: 600px; margin: 0 auto; text-align: center; padding-bottom: 64px; }
+    .hero-loc { font-size: 0.6rem; letter-spacing: 0.4em; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 16px; }
+    .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3rem, 10vw, 5.5rem); font-weight: 400; color: #faf9f7; line-height: 1.0; letter-spacing: -0.01em; }
+    .hero-title em { font-style: italic; color: #5BA8A0; font-weight: 400; }
+    .hero-wave { line-height: 0; margin-top: -2px; }
+    .hero-wave svg { width: 100%; height: auto; display: block; }
+    .hero-info { margin-top: 28px; font-size: 0.78rem; color: rgba(255,255,255,0.65); letter-spacing: 0.03em; line-height: 1.8; background: rgba(91,168,160,0.12); padding: 14px 24px; border-radius: 8px; display: inline-flex; flex-direction: row; align-items: center; flex-wrap: wrap; justify-content: center; gap: 0 6px; border: 1px solid rgba(91,168,160,0.25); }
+    .hero-info span { color: #5BA8A0; font-weight: 500; }
 
-    .hero-loc {
-      font-size: 0.6rem;
-      letter-spacing: 0.4em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.3);
-      margin-bottom: 16px;
-    }
+    .cards { max-width: 700px; margin: 0 auto; padding: 64px 40px 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .card { display: flex; align-items: center; justify-content: center; gap: 12px; background: #fff; border: 1px solid rgba(26,24,22,0.08); border-radius: 14px; padding: 18px; text-decoration: none; transition: all 0.25s ease; cursor: pointer; }
+    .card:hover { border-color: #5BA8A0; box-shadow: 0 6px 24px rgba(91,168,160,0.15); transform: translateY(-3px); }
+    .card-text h2 { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: #1a1816; text-align: center; }
+    .card .arrow { font-size: 0.9rem; color: #5BA8A0; flex-shrink: 0; }
+    .card--full { grid-column: 1 / -1; padding: 28px; }
+    .card--full .card-text h2 { font-size: 1.2rem; }
+    .card--promo { background: rgba(91,168,160,0.06); border-color: rgba(91,168,160,0.25); }
+    .card--promo:hover { background: rgba(91,168,160,0.1); }
+    .card--promo .card-text h2 { color: #4A8A82; }
 
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(3rem, 10vw, 5.5rem);
-      font-weight: 400;
-      color: #faf9f7;
-      line-height: 1.0;
-      letter-spacing: -0.01em;
-    }
+    /* ── Menu view ── */
+    .spa-menu .menu { padding: 0 40px 60px; }
+    .spa-menu .cat { padding-top: 40px; }
+    .spa-menu .allergen { margin-top: 40px; }
 
-    .hero-title em {
-      font-style: italic;
-      color: #5BA8A0;
-      font-weight: 400;
-    }
+    /* ── Back ── */
+    .back-btn { display: inline-block; margin: 28px 0 0; color: #5BA8A0; text-decoration: none; font-size: 0.85rem; cursor: pointer; font-family: 'DM Sans', sans-serif; }
+    .back-btn:hover { text-decoration: underline; }
 
-    .hero-wave {
-      line-height: 0;
-      margin-top: -2px;
-    }
-
-    .hero-wave svg {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .hero-info {
-      margin-top: 28px;
-      font-size: 0.78rem;
-      color: rgba(255,255,255,0.65);
-      letter-spacing: 0.03em;
-      line-height: 1.8;
-      background: rgba(91,168,160,0.12);
-      padding: 14px 24px;
-      border-radius: 8px;
-      display: inline-flex;
-      flex-direction: row;
-      align-items: center;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0 6px;
-      border: 1px solid rgba(91,168,160,0.25);
-    }
-
-    .hero-info span {
-      color: #5BA8A0;
-      font-weight: 500;
-    }
-
-    .cards {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 64px 40px 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 14px;
-    }
-
-    .card {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      background: #fff;
-      border: 1px solid rgba(26,24,22,0.08);
-      border-radius: 14px;
-      padding: 18px;
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-
-    .card:hover {
-      border-color: #5BA8A0;
-      box-shadow: 0 6px 24px rgba(91,168,160,0.15);
-      transform: translateY(-3px);
-    }
-
-    .card-text h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.05rem;
-      color: #1a1816;
-      text-align: center;
-    }
-
-    .card .arrow {
-      font-size: 0.9rem;
-      color: #5BA8A0;
-      flex-shrink: 0;
-    }
-
-    .card--full {
-      grid-column: 1 / -1;
-      padding: 28px;
-    }
-
-    .card--full .card-text h2 {
-      font-size: 1.2rem;
-    }
-
-    .card--promo {
-      background: rgba(91,168,160,0.06);
-      border-color: rgba(91,168,160,0.25);
-    }
-
-    .card--promo:hover {
-      background: rgba(91,168,160,0.1);
-    }
-
-    .card--promo .card-text h2 {
-      color: #4A8A82;
-    }
-
-    /* ── Responsive ─────────────────────── */
     @media (max-width: 540px) {
       .hero { padding: 56px 28px 0; }
       .hero-title { font-size: 3rem; }
-      .hero-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
-        text-align: center;
-        padding: 14px 20px;
-      }
+      .hero-info { flex-direction: column; align-items: center; gap: 4px; text-align: center; padding: 14px 20px; }
       .hero-info .hero-sep { display: none; }
       .cards { padding: 48px 24px 60px; }
+      .spa-menu .menu { padding: 0 24px 48px; }
+      .back-btn { margin-left: 24px; }
     }
   </style>
 </head>
-<body>
+<body class="route-home">
 
-  <!-- ── HERO ─────────────────────────── -->
-  <section class="hero">
-    <div class="hero-inner">
-      <p class="hero-loc"></p>
-      <h1 class="hero-title">Kiosco<br><em>La Piscina</em></h1>
-      <p class="hero-info"><span class="hero-row">Celebramos cumpleaños</span><span class="hero-sep"> · </span><span class="hero-row">Llamanos al <span class="hero-phone">645 95 25 06</span></span><span class="hero-sep"> · </span><span class="hero-row">Aceptamos tarjeta</span></p>
+  <!-- ── HOME VIEW ── -->
+  <div class="spa-home">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="hero-loc"></p>
+        <h1 class="hero-title">Kiosco<br><em>La Piscina</em></h1>
+        <p class="hero-info">
+          <span class="hero-row">Celebramos cumpleaños</span>
+          <span class="hero-sep"> · </span>
+          <span class="hero-row">Llámanos al <span class="hero-phone">645 95 25 06</span></span>
+          <span class="hero-sep"> · </span>
+          <span class="hero-row">Aceptamos tarjeta</span>
+        </p>
+      </div>
+      <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 60 C360 120 720 0 1080 60 C1260 90 1380 80 1440 60 L1440 120 L0 120 Z" fill="#0d0d0d"/>
+        </svg>
+      </div>
+    </section>
+
+    <div class="cards">
+      <div class="card" data-cat="hamburguesas"><div class="card-text"><h2>Hamburguesas</h2></div><div class="arrow">→</div></div>
+      <div class="card" data-cat="perritos"><div class="card-text"><h2>Perritos</h2></div><div class="arrow">→</div></div>
+      <div class="card" data-cat="sandwiches"><div class="card-text"><h2>Sándwiches</h2></div><div class="arrow">→</div></div>
+      <div class="card" data-cat="pizzelas"><div class="card-text"><h2>Pizzelas</h2></div><div class="arrow">→</div></div>
+      <div class="card" data-cat="bocadillos"><div class="card-text"><h2>Bocadillos</h2></div><div class="arrow">→</div></div>
+      <div class="card" data-cat="montados"><div class="card-text"><h2>Montados</h2></div><div class="arrow">→</div></div>
+      <div class="card" data-cat="pinchos"><div class="card-text"><h2>Pinchos</h2></div><div class="arrow">→</div></div>
+      <div class="card" data-cat="raciones"><div class="card-text"><h2>Raciones</h2></div><div class="arrow">→</div></div>
+      <div class="card" data-cat="ensaladas"><div class="card-text"><h2>Ensaladas</h2></div><div class="arrow">→</div></div>
+      <div class="card" data-cat="combinados"><div class="card-text"><h2>Combinados</h2></div><div class="arrow">→</div></div>
+      <div class="card card--full" data-cat="bebidas"><div class="card-text"><h2>Bebidas</h2></div><div class="arrow">→</div></div>
     </div>
-    <div class="hero-wave">
-      <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0 60 C360 120 720 0 1080 60 C1260 90 1380 80 1440 60 L1440 120 L0 120 Z" fill="#0d0d0d"/>
-      </svg>
-    </div>
-  </section>
-
-  <!-- ── CARDS ───────────────────────────── -->
-  <div class="cards">
-    <a href="hamburguesas.html" class="card">
-      <div class="card-text"><h2>Hamburguesas</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="perritos.html" class="card">
-      <div class="card-text"><h2>Perritos</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="sandwiches.html" class="card">
-      <div class="card-text"><h2>Sándwiches</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="pizzelas.html" class="card">
-      <div class="card-text"><h2>Pizzelas</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="bocadillos.html" class="card">
-      <div class="card-text"><h2>Bocadillos</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="montados.html" class="card">
-      <div class="card-text"><h2>Montados</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="pinchos.html" class="card">
-      <div class="card-text"><h2>Pinchos</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="raciones.html" class="card">
-      <div class="card-text"><h2>Raciones</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="ensaladas.html" class="card">
-      <div class="card-text"><h2>Ensaladas</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="combinados.html" class="card">
-      <div class="card-text"><h2>Combinados</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
-    <a href="bebidas.html" class="card card--full">
-      <div class="card-text"><h2>Bebidas</h2></div>
-      <div class="arrow">→</div>
-    </a>
-
   </div>
 
+  <!-- ── MENU VIEW ── -->
+  <div class="spa-menu">
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="hero-loc"></p>
+        <h1 class="hero-title">Kiosco<br><em>La Piscina</em></h1>
+        <p class="hero-info">
+          <span class="hero-row">Celebramos cumpleaños</span>
+          <span class="hero-sep"> · </span>
+          <span class="hero-row">Llámanos al <span class="hero-phone">645 95 25 06</span></span>
+          <span class="hero-sep"> · </span>
+          <span class="hero-row">Aceptamos tarjeta</span>
+        </p>
+      </div>
+      <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 60 C360 120 720 0 1080 60 C1260 90 1380 80 1440 60 L1440 120 L0 120 Z" fill="#0d0d0d"/>
+        </svg>
+      </div>
+    </section>
+    <main class="menu" id="menu-container"></main>
+  </div>
+
+  <script>
+    const DB = {
+      hamburguesas: {
+        title: 'Hamburguesas', items: [
+          { name: 'Hamburguesa Piscina', desc: 'Carne picada de ternera y cerdo o carne picada de pollo · Queso, Lechuga, Cebolla, Tomate, Huevo y Beicon', price: '7,50 €', star: true },
+          { name: 'Hamburguesa Mixta', desc: 'Carne picada de ternera y cerdo · Queso, Lechuga, Cebolla, Tomate', price: '6,50 €' },
+          { name: 'Hamburguesa Pollo', desc: 'Carne picada de pollo · Queso, Lechuga, Cebolla, Tomate', price: '6,50 €' },
+          { name: 'Hamburguesa Pollo Crispy 100gr', desc: 'Crujiente · Queso, Lechuga, Cebolla, Tomate', price: '6,50 €' },
+          { name: 'Hamburguesa Pollo Crispy 200g', desc: 'Queso, Lechuga, Cebolla, Tomate', price: '8,50 €' },
+        ]
+      },
+      perritos: {
+        title: 'Perritos Calientes', items: [
+          { name: 'Normal', desc: 'Salchicha y salsa a elegir', price: '3,50 €' },
+          { name: 'Especial', desc: 'Salchicha, 4 quesos, cebolla frita y salsa a elegir', price: '4,00 €' },
+          { name: 'XXL', desc: 'Salchicha y salsa a elegir', price: '4,00 €' },
+          { name: 'XXL Especial', desc: 'Salchicha, 4 quesos, cebolla frita y salsa a elegir', price: '4,50 €' },
+        ]
+      },
+      sandwiches: {
+        title: 'Sándwiches', items: [
+          { name: 'Mixto', desc: '', price: '5,00 €' },
+          { name: 'Mixto con Huevo', desc: '', price: '6,00 €' },
+          { name: 'Vegetal', desc: '', price: '5,00 €' },
+          { name: 'Vegetal con Pollo', desc: '', price: '6,50 €' },
+          { name: 'Vegetal con Huevo', desc: '', price: '6,00 €' },
+        ]
+      },
+      pizzelas: {
+        title: 'Pizzelas', items: [
+          { name: 'Pizzela', desc: '', price: '3,50 €' },
+        ]
+      },
+      bocadillos: {
+        title: 'Bocadillos', items: [
+          { name: 'Pepito de Ternera', desc: '', price: '8,50 €' },
+          { name: 'Bocadillo de Chorizo', desc: '', price: '6,50 €' },
+          { name: 'Bocadillo de Morcilla de cebolla', desc: '', price: '6,50 €' },
+          { name: 'Bocadillo de Lomo', desc: '', price: '6,50 €' },
+          { name: 'Bocadillo de Panceta', desc: '', price: '6,50 €' },
+          { name: 'Bocadillo de Beicon', desc: '', price: '6,50 €' },
+          { name: 'Bocadillo de Pollo a la plancha', desc: '', price: '6,50 €' },
+        ]
+      },
+      montados: {
+        title: 'Montados', items: [
+          { name: 'Montado de Chorizo', desc: '', price: '5,00 €' },
+          { name: 'Montado de Morcilla de cebolla', desc: '', price: '5,00 €' },
+          { name: 'Montado de Lomo', desc: '', price: '5,00 €' },
+          { name: 'Montado de Panceta', desc: '', price: '5,00 €' },
+          { name: 'Montado de Beicon', desc: '', price: '5,00 €' },
+          { name: 'Montado de Pollo a la plancha', desc: '', price: '5,00 €' },
+        ]
+      },
+      pinchos: {
+        title: 'Pinchos', items: [
+          { name: 'Pincho Moruno de Pollo', desc: '', price: '6,00 €' },
+          { name: 'Pincho Moruno de Cerdo', desc: '', price: '6,00 €' },
+         
+        ]
+      },
+      raciones: {
+        title: 'Raciones', items: [
+          { name: 'Ración Paella mixta', desc: 'Por encargo sábados y domingos · Llamar al 645 95 25 06', price: '8,00 €' },
+          { name: 'Vaso Grande de Patatas', desc: '', price: '6,00 €' },
+          { name: 'Vaso Grande de Salchipapas', desc: 'Patatas fritas con salchicha', price: '7,00 €' },
+          { name: 'Tortilla Entera', desc: '', price: '10,00 €' },
+          { name: 'Nuggets de Pollo', desc: '12 unidades', price: '8,00 €' },
+          { name: 'Croquetas', desc: 'Pollo o Jamón · 10 unidades', price: '8,00 €' },
+          { name: 'Alitas', desc: '', price: '9,50 €' },
+        ]
+      },
+      ensaladas: {
+        title: 'Ensaladas', items: [
+          { name: 'Ensalada Verde', desc: 'Lechuga, tomate, cebolla, aceitunas', price: '5,00 €' },
+          { name: 'Ensalada Completa', desc: 'Lechuga, tomate, cebolla, atún, aceitunas, huevo', price: '7,00 €' },
+        ]
+      },
+      combinados: {
+        title: 'Platos Combinados', items: [
+          { name: 'Combinado Nº 1', desc: 'Lomo, Huevo y Patatas', price: '8,50 €' },
+          { name: 'Combinado Nº 2', desc: 'Beicon, Huevo y Patatas', price: '8,50 €' },
+          { name: 'Combinado Nº 3', desc: 'Salchichas Frankfurt, Huevo y Patatas', price: '8,00 €' },
+          { name: 'Combinado Nº 4', desc: 'Filete de Ternera, Huevo y Patatas', price: '9,50 €' },
+          { name: 'Combinado Nº 5', desc: 'Pechuga de Pollo a la plancha, Huevo y Patatas', price: '8,50 €' },
+          { name: 'Combinado Nº 6', desc: '1 Pincho Moruno de pollo, Huevo y Patatas', price: '8,50 €' },
+          { name: 'Combinado Nº 7', desc: '1 Pincho Moruno de cerdo, Huevo y Patatas', price: '8,50 €' },
+          { name: 'Combinado Nº 8', desc: '1 Chuleta Sajonia, Huevo y Patatas', price: '8,50 €' },
+        ]
+      },
+      bebidas: {
+        title: 'Bebidas', items: [
+          { name: 'Caña de Cerveza', desc: '', price: '2,40 €' },
+          { name: 'Cerveza grande', desc: '', price: '3,40 €' },
+          { name: 'Litro de Cerveza', desc: '', price: '5,50 €' },
+          { name: 'Refrescos', desc: 'Coca-Cola, Fanta, Nestea, etc.', price: '2,40 €', badge: 'Lata' },
+          { name: 'Zumos', desc: 'Naranja, Piña, Melocotón', price: '1,60 €' },
+          { name: 'Red Bull', desc: '', price: '3,70 €' },
+          { name: 'Agua pequeña', desc: '', price: '1,20 €' },
+          { name: 'Agua grande', desc: '', price: '2,30 €' },
+          { name: 'Tinto de Verano pequeño', desc: '', price: '2,50 €' },
+          { name: 'Tinto de Verano grande', desc: '', price: '3,50 €' },
+          { name: 'Tinto de Verano 1l.', desc: '', price: '5,50 €' },
+          { name: 'Granizados', desc: 'Consultar al personal', price: '3,00 €' },
+          { name: 'Cubatas', desc: '', price: '7,00 €' },
+          { name: 'Litro de Cubata', desc: '', price: '14,00 €' },
+          { name: 'Café', desc: '', price: '1,70 €' },
+          { name: 'Licores', desc: '', price: '4,50 €' },
+        ]
+      }
+    };
+
+    const menuContainer = document.getElementById('menu-container');
+
+    function renderCategory(cat) {
+      const data = DB[cat];
+      if (!data) return;
+      const items = data.items.map(item => {
+        const badge = item.badge ? ` <span class="badge">★ ${item.badge}</span>` : '';
+        const star = item.star ? ' item--star' : '';
+        const desc = item.desc ? `<span class="item-desc">${item.desc}</span>` : '';
+        return `<div class="item${star}">
+  <div class="item-left">
+    <span class="item-name">${item.name}${badge}</span>
+    ${desc}
+  </div>
+  <span class="item-price">${item.price}</span>
+</div>`;
+      }).join('');
+      return `<a class="back-btn" id="back-btn">← Volver</a>
+<section class="cat">
+  <div class="cat-head"><div class="cat-head-text"><h2>${data.title}</h2></div></div>
+  <div class="items">${items}</div>
+</section>
+<div class="allergen">⚠️ Nuestros productos pueden contener trazas de alérgenos. Consulta al personal.</div>`;
+    }
+
+    function navigateTo(cat) {
+      menuContainer.innerHTML = renderCategory(cat);
+      document.body.className = 'route-menu';
+      history.pushState({ cat }, '', '#' + cat);
+      document.getElementById('back-btn').addEventListener('click', e => {
+        e.preventDefault();
+        navigateHome();
+      });
+    }
+
+    function navigateHome() {
+      menuContainer.innerHTML = '';
+      document.body.className = 'route-home';
+      history.pushState({ home: true }, '', location.pathname);
+    }
+
+    // Card clicks
+    document.querySelectorAll('.card[data-cat]').forEach(card => {
+      card.addEventListener('click', () => navigateTo(card.dataset.cat));
+    });
+
+    // Browser back/forward
+    window.addEventListener('popstate', e => {
+      if (e.state && e.state.home) {
+        document.body.className = 'route-home';
+        menuContainer.innerHTML = '';
+      } else if (e.state && e.state.cat) {
+        navigateTo(e.state.cat);
+      } else if (location.hash) {
+        const cat = location.hash.slice(1);
+        if (DB[cat]) navigateTo(cat);
+      } else {
+        document.body.className = 'route-home';
+      }
+    });
+
+    // Init from hash
+    if (location.hash) {
+      const cat = location.hash.slice(1);
+      if (DB[cat]) navigateTo(cat);
+    }
+  </script>
 </body>
 </html>
